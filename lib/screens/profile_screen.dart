@@ -44,8 +44,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         .get();
     setState(() {
       postLen = postCount.docs.length;
-      isFollowing = (snap.data()!['followers'] as List).contains(myUser);
-      followersCount = (snap.data()!['followers'] as List).length;
+      isFollowing = (snap.data()!['follower'] as List).contains(myUser);
+      followersCount = (snap.data()!['follower'] as List).length;
       followingCount = (snap.data()!['following'] as List).length;
 
       isLoading = true;
@@ -84,8 +84,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children: [
                           CircleAvatar(
                             backgroundColor: Colors.blue,
-                            backgroundImage: NetworkImage(
-                                snap.data()!['photoUrl'].toString()),
+                            backgroundImage:
+                                NetworkImage(snap.data()!['picUrl'].toString()),
                             radius: 40,
                           ),
                           SpecialColumn('Post', postLen),

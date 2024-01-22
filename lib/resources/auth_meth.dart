@@ -49,7 +49,7 @@ class AuthMeth {
 
         ///store to provider
 
-        GetUserModel().setUserModel();
+        await GetUserModel().setUserModel();
       }
     } catch (e) {
       res = e.toString();
@@ -63,8 +63,8 @@ class AuthMeth {
   }) async {
     String res = '';
     try {
-      _auth.signInWithEmailAndPassword(email: email, password: pass);
-      GetUserModel().setUserModel();
+      await _auth.signInWithEmailAndPassword(email: email, password: pass);
+      await GetUserModel().setUserModel();
     } catch (e) {
       res = e.toString();
     }

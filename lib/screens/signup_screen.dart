@@ -56,6 +56,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
       setState(() {
         _isLoading = false;
       });
+
+      if (res.isEmpty && mounted) {
+        Navigator.pop(context);
+      }
     }
   }
 

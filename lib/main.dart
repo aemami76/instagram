@@ -14,6 +14,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await GetUserModel().setUserModel();
+
   runApp(const MyApp());
 }
 

@@ -13,14 +13,15 @@ class GetUserModel {
 
       var data = snap.data() as Map<String, dynamic>;
 
-      print("....... Snap = ${snap.data()}");
+      print("....... Snapfrom first class = ${snap.data()}");
+
       MyUser myUser = MyUser(
-          id: data['uid'],
+          id: data['id'],
           username: data['username'],
           email: data['email'],
           bio: data['bio'],
-          picUrl: data['photoUrl'],
-          follower: data['followers'] as List<dynamic>,
+          picUrl: data['picUrl'],
+          follower: data['follower'] as List<dynamic>,
           following: data['following'] as List<dynamic>);
 
       print("....... MyUser = ${myUser.picUrl}");
